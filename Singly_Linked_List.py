@@ -48,6 +48,22 @@ class SinglyLinkedList:
         else:
             print("Please try again and enter existing element in list")
     
+    def deleteElement(self,element):
+        if self.search(element):
+            current = self.head
+            prev = None
+            while current:
+                if current.data == element and prev:
+                    prev.next = current.next
+                    print(f"a node with '{element}' is deleted")
+                elif current.data == element and not prev:
+                    self.head = self.head.next
+                    print(f"a head node with '{element}' is deleted")
+                prev = current
+                current = current.next
+        else:
+            print("Please try again and enter existing element in list")
+    
     def __str__(self):
         current = self.head
         while current.next:
@@ -66,7 +82,8 @@ Please enter:
     2. Add element after some element
     3. Display Singly Linked List
     4. Search element in linked list 
-    5. Exit
+    5. Delete element from list
+    6. Exit
     : 
                     """)
         match ch:
@@ -84,8 +101,10 @@ Please enter:
                 data = input("Please enter element you want to search: ")
                 myList.search(data)
               
-
             case "5":
+                data = input("Please enter element you want to delete: ")
+                myList.deleteElement(data)
+            case "6":
                 print("Thank you!")
                 loop = False
             
