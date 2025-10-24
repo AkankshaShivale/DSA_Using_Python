@@ -4,7 +4,7 @@ class Node:
         self.next = None
         self.prev = None
 
-class SinglyLinkedList:
+class DoublyLinkedList:
     def __init__(self):
         self.head = None
         self.tail = None
@@ -83,7 +83,7 @@ class SinglyLinkedList:
         return ""
 
 if __name__ == '__main__':
-    myList = SinglyLinkedList()
+    myList = DoublyLinkedList()
     loop = True
     while(loop):
         ch = input("""
