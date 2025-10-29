@@ -48,7 +48,7 @@ class Queue:
         return cnt
     
         
-    def display(self):
+    def __str__(self):
         if self.isEmpty():
             print("Queue is Empty, hence nothing to show")
 
@@ -57,7 +57,7 @@ class Queue:
             while current:
                 print(f"[ {current.data} ] <- ",end="")
                 current = current.next
-        
+        return ""
 
 
 if __name__ == '__main__':
@@ -91,7 +91,7 @@ Please enter:
                 print(f"Total elements in queue: {q.count()}")
 
             case "5":
-                q.display()
+                print(q)
 
             case "6":
                 print("Thank you! Exiting the program.")
