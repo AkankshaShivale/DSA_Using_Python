@@ -75,43 +75,44 @@ class SinglyLinkedList:
 if __name__ == '__main__':
     myList = SinglyLinkedList()
     loop = True
-    while(loop):
+
+    while loop:
         ch = input("""
 Please enter:
     1. Add Node at end of list
     2. Add element after some element
     3. Display Singly Linked List
-    4. Search element in linked list 
+    4. Search element in linked list
     5. Delete element from list
     6. Exit
-    : 
-                    """)
+    :
+""")
+
         match ch:
             case "1":
                 myList.addNodeAtEnd()
-            
+
             case "2":
-                data = input("Please enter after which element you want to add new one?: ")
+                data = input("Enter the element after which you want to add a new one: ")
                 myList.addNodeAfterData(data)
-            
+
             case "3":
                 print(myList)
-            
+
             case "4":
-                data = input("Please enter element you want to search: ")
+                data = input("Enter the element you want to search: ")
                 myList.search(data)
-              
+
             case "5":
-                data = input("Please enter element you want to delete: ")
+                data = input("Enter the element you want to delete: ")
                 myList.deleteElement(data)
+
             case "6":
                 print("Thank you!")
                 loop = False
-            
+
             case _:
-                print("Please enter valid choice")
+                print("Please enter a valid choice.")
 
-
-        
 
         
