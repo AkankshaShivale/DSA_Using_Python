@@ -22,25 +22,8 @@ def binarySearchIter(List, data):
 
     while low <= high:
         
-        """mid = low + (high - low) // 2
-        The Integer Overflow Problem
-            ->
-            In languages like C, C++, or Java, integers have a maximum value they can store:
-
-            32-bit signed integer max: 2,147,483,647
-            If you exceed this, the number "wraps around" to negative values (overflow)
-        In Python, integers can be arbitrarily large - they automatically expand to hold any value
-        
-        Array:  [2,  3,  4,  10,  40]
-            Index:   0   1   2   3    4
-                    ↑        ↑        ↑
-                    low      mid     high
-
-            Distance from low to high = 4 - 0 = 4
-            Half the distance = 4 // 2 = 2
-            Middle = start from low and go 2 steps = 0 + 2 = 2"""
-        
         mid = (low +high)//2
+        # mid = low + (high - low) // 2
 
         if List[mid] == data:
             return mid
@@ -59,3 +42,26 @@ if __name__=="__main__":
         print("9 is not in list")
     else:
         print(f"9 is found at {binarySearchIter(l,9)} position")
+
+
+"""
+    More efficient way to find middle position is:
+        mid = low + (high - low) // 2
+    
+    if we use mid = (high + low) // 2 then Integer Overflow Problem can happen.
+    The Integer Overflow Problem
+            ->
+        In languages like C, C++, or Java, integers have a maximum value they can store:
+
+            32-bit signed integer max: 2,147,483,647
+            If you exceed this, the number "wraps around" to negative values (overflow)
+        In Python, integers can be arbitrarily large - they automatically expand to hold any value
+        
+    Array:  [2,  3,  4,  10,  40]
+    Index:   0   1   2   3    4
+            ↑        ↑        ↑
+            low      mid     high
+
+    Distance from low to high = 4 - 0 = 4
+    Half the distance = 4 // 2 = 2
+    Middle = start from low and go 2 steps = 0 + 2 = 2"""
