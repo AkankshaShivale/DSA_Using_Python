@@ -8,3 +8,5 @@ Current Content
 - **Doubly Linked List** - Bidirectional linked list
 - **Stack using List** - LIFO data structure
 - **Queue using Linked List** - FIFO data structure
+- **Breadth first Search** - Iterative Graph traversal method
+- **Depth first search** - Recursive Graph traversal method
